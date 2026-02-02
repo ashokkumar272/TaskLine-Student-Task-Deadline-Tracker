@@ -1,16 +1,15 @@
-package com.example.springOne.service;
+package com.example.taskline.service;
 
-import com.example.springOne.dto.TaskCreateRequest;
-import com.example.springOne.dto.TaskResponse;
-import com.example.springOne.entity.Task;
-import com.example.springOne.entity.TaskStatus;
-import com.example.springOne.exception.ResourceNotFoundException;
-import com.example.springOne.repository.TaskRepository;
+import com.example.taskline.dto.TaskCreateRequest;
+import com.example.taskline.dto.TaskResponse;
+import com.example.taskline.entity.Task;
+import com.example.taskline.entity.TaskStatus;
+import com.example.taskline.exception.ResourceNotFoundException;
+import com.example.taskline.repository.TaskRepository;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Service
 public class TaskServiceImpl implements TaskService {
@@ -34,10 +33,9 @@ public class TaskServiceImpl implements TaskService {
 
     @Override
     public List<TaskResponse> getAllTasks() {
-        return taskRepository.findAll()
-                .stream()
+        return taskRepository.findAll().stream()
                 .map(TaskResponse::fromEntity)
-                .collect(Collectors.toList());
+                .toList();
     }
 
     @Override
@@ -67,10 +65,8 @@ public class TaskServiceImpl implements TaskService {
     @Override
     public List<TaskResponse> getUpcomingTasks(int hours) {
         LocalDateTime now = LocalDateTime.now();
-        LocalDateTime end = now.plusHours(hours);
-        return taskRepository.findByDeadlineBetween(now, end)
-                .stream()
+        return taskRepository.findByDeadlineBetween(now, now.plusHours(hours)).stream()
                 .map(TaskResponse::fromEntity)
-                .collect(Collectors.toList());
+                .toList();
     }
 }

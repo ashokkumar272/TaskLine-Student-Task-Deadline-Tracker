@@ -1,8 +1,8 @@
-package com.example.springOne.controller;
+package com.example.taskline.controller;
 
-import com.example.springOne.dto.TaskCreateRequest;
-import com.example.springOne.dto.TaskResponse;
-import com.example.springOne.service.TaskService;
+import com.example.taskline.dto.TaskCreateRequest;
+import com.example.taskline.dto.TaskResponse;
+import com.example.taskline.service.TaskService;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.example</groupId>
-	<artifactId>springOne</artifactId>
+	<artifactId>taskline</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>springOne</name>
-	<description>Demo project for Spring Boot</description>
+	<name>TaskLine</name>
+	<description>Task management application</description>
 	<url/>
 	<licenses>
 		<license/>

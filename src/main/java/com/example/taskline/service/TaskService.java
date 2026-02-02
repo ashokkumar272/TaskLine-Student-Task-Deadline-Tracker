@@ -1,7 +1,7 @@
-package com.example.springOne.service;
+package com.example.taskline.service;
 
-import com.example.springOne.dto.TaskCreateRequest;
-import com.example.springOne.dto.TaskResponse;
+import com.example.taskline.dto.TaskCreateRequest;
+import com.example.taskline.dto.TaskResponse;
 
 import java.util.List;
 

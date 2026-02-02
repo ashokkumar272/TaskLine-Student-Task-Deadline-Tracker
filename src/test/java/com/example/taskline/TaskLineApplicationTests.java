@@ -1,10 +1,10 @@
-package com.example.springOne;
+package com.example.taskline;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class SpringOneApplicationTests {
+class TaskLineApplicationTests {
 
 	@Test
 	void contextLoads() {

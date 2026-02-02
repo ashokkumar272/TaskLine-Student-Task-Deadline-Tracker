@@ -1,4 +1,4 @@
-package com.example.springOne.exception;
+package com.example.taskline.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

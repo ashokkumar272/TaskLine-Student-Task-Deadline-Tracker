@@ -1,4 +1,4 @@
-package com.example.springOne.entity;
+package com.example.taskline.entity;
 
 public enum TaskStatus {
     PENDING,

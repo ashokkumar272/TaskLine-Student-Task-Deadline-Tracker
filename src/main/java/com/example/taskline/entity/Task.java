@@ -1,37 +1,35 @@
-package com.example.springOne.dto;
+package com.example.taskline.entity;
 
-import com.example.springOne.entity.Task;
-import com.example.springOne.entity.TaskStatus;
-
+import jakarta.persistence.*;
 import java.time.LocalDateTime;
 
-public class TaskResponse {
+@Entity
+@Table(name = "tasks")
+public class Task {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String title;
-    private String description;
-    private LocalDateTime deadline;
-    private TaskStatus status;
 
-    public TaskResponse() {
+    @Column(nullable = false)
+    private String title;
+
+    private String description;
+
+    @Column(nullable = false)
+    private LocalDateTime deadline;
+
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
+    private TaskStatus status = TaskStatus.PENDING;
+
+    public Task() {
     }
 
-    public TaskResponse(Long id, String title, String description, LocalDateTime deadline, TaskStatus status) {
-        this.id = id;
+    public Task(String title, String description, LocalDateTime deadline) {
         this.title = title;
         this.description = description;
         this.deadline = deadline;
-        this.status = status;
-    }
-
-    public static TaskResponse fromEntity(Task task) {
-        return new TaskResponse(
-                task.getId(),
-                task.getTitle(),
-                task.getDescription(),
-                task.getDeadline(),
-                task.getStatus()
-        );
     }
 
     public Long getId() {
